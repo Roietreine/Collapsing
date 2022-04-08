@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#BF1619"
+            app:contentScrim="#BF1619"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            android:id="@+id/collapse_page">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:text="@string/home"
+                app:layout_collapseMode="parallax"
+                android:textColor="@color/white"
+                android:shadowRadius="3"
+                android:shadowColor="@color/black"
+                android:shadowDy="4"
+                android:shadowDx="3"/>
+
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:src="@drawable/navbar"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                app:layout_collapseMode="parallax"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:id="@+id/back_button"
+                    android:layout_width="50dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:contentDescription="@null"
+                    android:background="@drawable/backbutton"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#BF1619"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/shapebg"
+                app:layout_constraintBottom_toBottomOf="@+id/home_desc1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/shapebg">
+
+            </com.google.android.material.imageview.ShapeableImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_title"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:text="Sample Title"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="4"
+                android:shadowRadius="3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="13dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_desc"
+                android:text="@string/sample_desc"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="4"
+                android:shadowRadius="3"
+                android:textAlignment="center"
+                android:padding="13dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/home_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_title1"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:text="Sample Title"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="4"
+                android:shadowRadius="3"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:padding="13dp"
+                app:layout_constraintTop_toBottomOf="@id/home_desc" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_desc1"
+                android:text="@string/sample_desc"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                android:shadowColor="@color/black"
+                android:shadowDx="3"
+                android:shadowDy="4"
+                android:shadowRadius="3"
+                android:textAlignment="center"
+                android:padding="13dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toBottomOf="@id/home_title1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
